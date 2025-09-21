@@ -1,6 +1,6 @@
 import { createJSONStorage } from "zustand/middleware";
 
-export const storage = {
+export const wxtStorage = {
   getItem: async (name: string) => {
     const result: any = await storage.getItem(name as `local:${string}`);
     if (!result) return null;
@@ -14,4 +14,4 @@ export const storage = {
   },
 };
 
-export const wxtStoreAdapter = createJSONStorage(() => storage);
+export const wxtStoreAdapter = createJSONStorage(() => wxtStorage);
